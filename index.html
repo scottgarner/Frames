@@ -1,0 +1,56 @@
+<html>
+	<head>
+
+		<title>Frame Builder</title>
+
+		<style>
+			body {
+				background: #333;
+				background-image: url('images/office.png');
+				font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+					"Helvetica Neue", sans-serif;
+				font-weight: 300;
+				color: #fff;
+				font-size: 10pt;
+
+				margin: 0;
+				padding: 0;
+			}
+			#container{
+				background: #fff;
+				background-image: url('images/tiny_grid.png');
+				border: 1px solid #ccc;
+				position:absolute;
+			}
+			#downloadLink {
+				cursor: pointer;
+			}
+
+		</style>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js"></script>
+		
+		<script src="js/vendor/raphael-min.js"></script>
+		<script src="js/vendor/FileSaver.min.js"></script>
+		<script src="js/vendor/Blob.js"></script>
+		<script src="js/vendor/dat.gui.min.js"></script>
+
+		<script src="js/frame.js"></script>
+
+		<script>
+			$(document).ready( function () {
+
+				$(window).resize( function() { centerFrame(); });
+
+				displayControls();
+				displayFrame();
+
+			});
+		</script>
+
+	</head>
+	<body>
+			<div id="container"></div>
+	</body>
+</html>
