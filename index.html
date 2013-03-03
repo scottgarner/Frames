@@ -1,35 +1,15 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 	<head>
-
 		<title>Frame Builder</title>
 
-		<style>
-			body {
-				background: #333;
-				background-image: url('images/office.png');
-				font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
-					"Helvetica Neue", sans-serif;
-				font-weight: 300;
-				color: #fff;
-				font-size: 10pt;
-
-				margin: 0;
-				padding: 0;
-			}
-			#container{
-				background: #fff;
-				background-image: url('images/tiny_grid.png');
-				border: 1px solid #ccc;
-				position:absolute;
-			}
-			#downloadLink {
-				cursor: pointer;
-			}
-
-		</style>
+		<meta charset="utf-8">
+		<meta name="description" content="Laser Template Generator for iOS Device Frames" />
+		<meta name="author" content="Scott Garner" />
+		<meta name="copyright" content="Copyright 2013 Scott Garner" />		
+		<link rel="stylesheet" type="text/css" href="css/screen.css">
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-		<script src="http://d3js.org/d3.v3.min.js"></script>
 		
 		<script src="js/vendor/raphael-min.js"></script>
 		<script src="js/vendor/FileSaver.min.js"></script>
@@ -37,12 +17,15 @@
 		<script src="js/vendor/dat.gui.min.js"></script>
 
 		<script src="js/frame.js"></script>
+		<script src="js/presets.js"></script>
+		<script src="js/builder.js"></script>
+		<script src="js/parameters.js"></script>
+
 
 		<script>
 			$(document).ready( function () {
 
-				$(window).resize( function() { centerFrame(); });
-
+				init();
 				displayControls();
 				displayFrame();
 
@@ -52,5 +35,10 @@
 	</head>
 	<body>
 			<div id="container"></div>
+			<div id="controls">
+				<h1>Frame Builder</h1>
+				<div id="credit"><a href="http://scott.j38.net">Scott Made This</a></div>
+			</div>
+			
 	</body>
 </html>
