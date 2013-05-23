@@ -160,7 +160,24 @@ function buildFrame(device) {
 
 	]
 
-	return pathToString(outerFrame) + "Z" + pathToString(innerFrame) + "Z";
+	// var standPath = [
+	// 	{x: parameters.frameWidth, y:parameters.frameWidth},
+	// 	{x: parameters.frameWidth + device.screenWidth, y:parameters.frameWidth + device.screenHeight/2},
+	// 	{x: parameters.frameWidth, y:parameters.frameWidth + device.screenHeight},
+	// ];
+
+	// var standSeamPath = [
+	// 	{
+	// 		x: parameters.frameWidth ,
+	// 		y: parameters.frameWidth + device.screenHeight/2
+	// 	},	
+	// 	{
+	// 		x: parameters.frameWidth + device.screenWidth ,
+	// 		y: parameters.frameWidth + device.screenHeight/2
+	// 	},					
+	// ]	
+
+	return pathToString(outerFrame) + "Z" + pathToString(innerFrame) + "Z"; // + pathToString(standPath) + dashedPathToString(standSeamPath);
 
 }
 
@@ -220,15 +237,8 @@ function buildTemplate(device) {
 		},																				
 	];
 
-	var standPath = [
-		{x: 0, y: device.height},
-		{x: 0 , y: device.height + parameters.flapWidth*2},
-		{x: parameters.flapWidth + device.depth + device.width + device.depth + parameters.flapWidth  , y: device.height + parameters.flapWidth*2},
-		{x: parameters.flapWidth + device.depth + device.width + device.depth + parameters.flapWidth, y: device.height},
 
-	];
-
-	return pathToString(outerPath) + "Z" + pathToString(standPath);
+	return pathToString(outerPath) + "Z";
 }
 
 function buildTemplateSeams(device) {
@@ -288,23 +298,13 @@ function buildTemplateSeams(device) {
 		},						
 	]	
 
-	var seamPathSix = [
-		{
-			x: parameters.flapWidth + device.depth + device.width/2 ,
-			y: device.height + device.depth
-		},	
-		{
-			x: parameters.flapWidth + device.depth + device.width/2 ,
-			y: device.height + device.depth+ parameters.flapWidth * 2 - device.depth
-		},						
-	]
+
 
 	return dashedPathToString(seamPathOne)
 		+ dashedPathToString(seamPathTwo)
 		+ dashedPathToString(seamPathThree)
 		+ dashedPathToString(seamPathFour)
-		+ dashedPathToString(seamPathFive)
-		+ dashedPathToString(seamPathSix);	
+		+ dashedPathToString(seamPathFive);	
 		
 
 
